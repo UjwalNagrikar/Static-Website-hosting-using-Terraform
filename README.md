@@ -49,11 +49,14 @@ static-website-hosting/
 ├── main.tf               # Main Terraform configuration
 ├── provider.tf           # AWS provider configuration
 ├── index.html            # Website HTML content
-├── style.css             # Website CSS styling
-├── .terraform/           # Terraform working directory
-├── terraform.tfstate     # Terraform state file
-└── terraform.tfstate.backup  # State backup
+└── style.css             # Website CSS styling
 ```
+
+**Note**: After running `terraform init` and `terraform apply`, Terraform will create additional files:
+- `.terraform/` - Terraform working directory
+- `terraform.tfstate` - Terraform state file
+- `terraform.tfstate.backup` - State backup file
+- `.terraform.lock.hcl` - Provider version lock file
 
 ## Configuration Files
 
@@ -164,13 +167,13 @@ The `style.css` file includes:
 
 ### Step 1: Clone and Setup
 ```bash
-# Clone the repository
-git clone <repository-url>
+# Clone the repository or create project directory
+mkdir static-website-hosting
 cd static-website-hosting
 
 # Ensure your files are in place
 ls -la
-# Should show: main.tf, provider.tf, index.html, style.css
+# Should show: README.md, main.tf, provider.tf, index.html, style.css
 ```
 
 ### Step 2: Initialize Terraform
