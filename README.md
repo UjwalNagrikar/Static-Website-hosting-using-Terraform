@@ -1,17 +1,63 @@
 # Static Website Hosting using Terraform
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/hashicorp/terraform/main/website/public/img/logo-hashicorp.svg" alt="Terraform Logo" width="100" height="100">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" width="100" height="50">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" width="50" height="50">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" width="50" height="50">
+</div>
+
+<div align="center">
+  <h3>🚀 Infrastructure as Code | ☁️ Cloud Hosting | 📱 Responsive Design</h3>
+</div>
+
+---
+
 ## Project Overview
 
 This project demonstrates how to host a static website on AWS S3 using Terraform Infrastructure as Code (IaC). The project includes a professional resume website with modern CSS styling, deployed entirely through Terraform automation.
 
 ## Architecture
 
+<div align="center">
+  <img src="https://via.placeholder.com/800x400/2C3E50/FFFFFF?text=Architecture+Diagram" alt="Architecture Placeholder">
+</div>
+
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Internet      │    │   AWS S3        │    │   Static Files  │
-│   Users         │───▶│   Bucket        │───▶│   index.html    │
-│                 │    │   (Web Hosting) │    │   style.css     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                TERRAFORM WORKFLOW                               │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Developer  ──terraform plan──▶  ┌─────────────────┐  ──creates──▶  AWS Cloud │
+│     │                            │   Terraform     │                     │      │
+│     │                            │   State         │                     │      │
+│     │                            │   Management    │                     │      │
+│     │                            └─────────────────┘                     │      │
+│     │                                     │                              │      │
+│     └──terraform apply──▶ ┌─────────────────┐  ──deploys──▶  ┌─────────────────┐│
+│                           │   Infrastructure │                │   S3 Bucket     ││
+│                           │   as Code (IaC)  │                │   Static Website││
+│                           └─────────────────┘                └─────────────────┘│
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              WEBSITE ARCHITECTURE                               │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Internet Users  ──HTTP──▶  ┌─────────────────┐  ──serves──▶  ┌───────────────┐ │
+│                             │   AWS S3        │               │ Static Files  │ │
+│                             │   Bucket        │               │ • index.html  │ │
+│                             │   (Web Hosting) │               │ • style.css   │ │
+│                             └─────────────────┘               └───────────────┘ │
+│                                     │                                           │
+│                                     │                                           │
+│                              ┌─────────────────┐                               │
+│                              │   Bucket Policy │                               │
+│                              │   (Public Read) │                               │
+│                              └─────────────────┘                               │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Features
@@ -165,6 +211,35 @@ The `style.css` file includes:
 
 ## Deployment Instructions
 
+### 🚀 Deployment Workflow
+
+<div align="center">
+  <img src="https://via.placeholder.com/800x200/3498DB/FFFFFF?text=Deployment+Workflow" alt="Deployment Workflow">
+</div>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                             DEPLOYMENT PROCESS                                  │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Step 1: Setup     Step 2: Initialize    Step 3: Plan      Step 4: Deploy     │
+│  ┌─────────────┐   ┌─────────────────┐   ┌─────────────┐   ┌─────────────────┐ │
+│  │   Create    │──▶│  terraform init │──▶│terraform plan│──▶│ terraform apply │ │
+│  │ Directory   │   │                 │   │             │   │                 │ │
+│  │ Add Files   │   │ Download        │   │ Review      │   │ Create          │ │
+│  └─────────────┘   │ Providers       │   │ Changes     │   │ Resources       │ │
+│                    └─────────────────┘   └─────────────┘   └─────────────────┘ │
+│                                                                                 │
+│  Step 5: Verify    Step 6: Access       Step 7: Manage     Step 8: Cleanup    │
+│  ┌─────────────┐   ┌─────────────────┐   ┌─────────────┐   ┌─────────────────┐ │
+│  │   Check     │   │   Open Website  │   │   Monitor   │   │terraform destroy│ │
+│  │ Resources   │   │   Test Features │   │   Update    │   │                 │ │
+│  │ Validate    │   │                 │   │   Scale     │   │ Remove All      │ │
+│  └─────────────┘   └─────────────────┘   └─────────────┘   └─────────────────┘ │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 ### Step 1: Clone and Setup
 ```bash
 # Clone the repository or create project directory
@@ -287,20 +362,77 @@ terraform destroy
 
 ## Technologies Used
 
-- **Terraform**: Infrastructure as Code
-- **AWS S3**: Static website hosting
-- **HTML5**: Website structure
-- **CSS3**: Modern styling with gradients and animations
-- **Font Awesome**: Professional icons
-- **Git**: Version control
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" width="50" height="50"><br><strong>Terraform</strong><br>Infrastructure as Code</td>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="50" height="50"><br><strong>AWS S3</strong><br>Static Website Hosting</td>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" height="50"><br><strong>HTML5</strong><br>Website Structure</td>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" height="50"><br><strong>CSS3</strong><br>Modern Styling</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="50" height="50"><br><strong>Git</strong><br>Version Control</td>
+      <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Font_Awesome_5_brands_font-awesome.svg" width="50" height="50"><br><strong>Font Awesome</strong><br>Professional Icons</td>
+      <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="50" height="50"><br><strong>VS Code</strong><br>Development Environment</td>
+      <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="50" height="50"><br><strong>Terminal</strong><br>Command Line Interface</td>
+    </tr>
+  </table>
+</div>
+
+### Technology Stack Benefits
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              TECHNOLOGY BENEFITS                                │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  🏗️ Terraform        │  ☁️ AWS S3           │  🌐 HTML5/CSS3      │  🔧 DevOps     │
+│  ─────────────────   │  ─────────────────   │  ─────────────────  │  ─────────────│
+│  • Reproducible     │  • 99.99% Uptime     │  • Modern Design   │  • Automation │
+│  • Version Control  │  • Global CDN        │  • Responsive       │  • Scalability│
+│  • State Management │  • Pay-as-you-go     │  • SEO Friendly     │  • Monitoring │
+│  • Infrastructure   │  • Security Features │  • Fast Loading     │  • CI/CD Ready│
+│    as Code          │  • Easy Scaling      │  • Cross-browser    │  • Best       │
+│                     │                      │    Compatible       │    Practices  │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ## Project Benefits
 
-1. **Scalability**: S3 can handle high traffic loads
-2. **Reliability**: 99.999999999% (11 9's) of durability
-3. **Cost-Effective**: Pay only for what you use
-4. **Automation**: Complete infrastructure automation
-5. **Version Control**: Infrastructure changes tracked in Git
+<div align="center">
+  <img src="https://via.placeholder.com/800x300/27AE60/FFFFFF?text=Project+Benefits+%26+Features" alt="Project Benefits">
+</div>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                PROJECT BENEFITS                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  🚀 SCALABILITY           💰 COST-EFFECTIVE         🔒 SECURITY                │
+│  ─────────────────        ─────────────────         ─────────────────          │
+│  • Handle high traffic    • Pay only for usage      • AWS security features    │
+│  • Auto-scaling S3        • No server maintenance   • Bucket policies          │
+│  • Global availability    • Minimal monthly costs   • Public read-only access  │
+│  • 99.99% uptime SLA      • Free tier eligible      • No sensitive data        │
+│                                                                                 │
+│  ⚡ PERFORMANCE           🔧 AUTOMATION              📊 MONITORING               │
+│  ─────────────────        ─────────────────         ─────────────────          │
+│  • Fast content delivery  • Infrastructure as Code  • AWS CloudWatch           │
+│  • Optimized for static   • Single command deploy   • Access logs              │
+│  • CDN integration ready  • Version controlled      • Performance metrics      │
+│  • Minimal latency        • Reproducible builds     • Error tracking           │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Key Features
+
+- ✅ **Scalability**: S3 can handle high traffic loads
+- ✅ **Reliability**: 99.999999999% (11 9's) of durability  
+- ✅ **Cost-Effective**: Pay only for what you use
+- ✅ **Automation**: Complete infrastructure automation
+- ✅ **Version Control**: Infrastructure changes tracked in Git
 
 ## Learning Outcomes
 
@@ -321,7 +453,39 @@ For issues or questions:
 
 ---
 
-**Author**: Ujwal Nagrikar  
-**Contact**: ujjwalnagrikar@mail.com  
-**GitHub**: https://github.com/UjwalNagrikar  
-**Project**: Static Website Hosting using Terraform
+<div align="center">
+  <h2>🏆 Project Showcase</h2>
+  <p><strong>Professional Static Website Hosting with Modern DevOps Practices</strong></p>
+  
+  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  
+  <br><br>
+  
+  <table>
+    <tr>
+      <td><strong>🔧 Author</strong></td>
+      <td>Ujwal Nagrikar</td>
+    </tr>
+    <tr>
+      <td><strong>📧 Contact</strong></td>
+      <td>ujjwalnagrikar@mail.com</td>
+    </tr>
+    <tr>
+      <td><strong>🌐 GitHub</strong></td>
+      <td><a href="https://github.com/UjwalNagrikar">https://github.com/UjwalNagrikar</a></td>
+    </tr>
+    <tr>
+      <td><strong>📁 Project</strong></td>
+      <td>Static Website Hosting using Terraform</td>
+    </tr>
+  </table>
+  
+  <br>
+  
+  <p>
+    <strong>⭐ If you found this project helpful, please give it a star! ⭐</strong>
+  </p>
+</div>
