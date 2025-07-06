@@ -387,3 +387,13 @@ graph TD
 - **Fast Loading**: Optimized for Core Web Vitals
 
 This architecture provides a solid foundation for hosting static websites with modern DevOps practices, security best practices, and performance optimization techniques.
+
+
+
+---
+
+**Author**: Ujwal Nagrikar  
+**Contact**: ujjwalnagrikar@mail.com  
+**GitHub**: https://github.com/UjwalNagrikar  
+**Project**: Static Website Hosting using Terraform
+
