@@ -1,6 +1,6 @@
 # Static Website Hosting using Terraform
 
-<div style="display: flex; gap: 10px; align-items: center;">
+<div   align="center" style="display: flex; gap: 10px; align-items: center;">
   <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform Logo" width="100" height="100">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" width="100" height="50">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" width="50" height="50">
